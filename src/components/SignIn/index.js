@@ -30,7 +30,7 @@ class SignInFormBase extends Component {
   onSubmit = event => {
     const { email, password } = this.state;
 
-    this.props.Firebase
+    this.props.firebase
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
@@ -68,7 +68,7 @@ class SignInFormBase extends Component {
           type='password'
           placeholder='Password'
         />
-        <button disable={isInvalid} type='submit'>
+        <button disabled={isInvalid} type='submit'>
           Sign In
         </button>
 
